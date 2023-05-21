@@ -58,14 +58,14 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="game">
       <h1>Tic Tac Toe</h1>
       <h2>It is {turn}'s turn</h2>
       <div className="WinnerWinnerChickenDinner">
         <button className={winner !== '' ? '' : 'hidden'} onClick={() => restartGame()}>Restart</button>
-        <h2>{winner}</h2>
+        <h1>{winner}</h1>
       </div>
-      <div className="game">
+      <div className="game-board">
 
         <div className="board-row">
           <div onClick={() => winner === '' ? setPlay(0, turn) : null } id="0" className="board-square">

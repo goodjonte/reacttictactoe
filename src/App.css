@@ -1,5 +1,12 @@
 .game {
   width: 363px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.game-board {
+  font-family: 'Kanit', sans-serif;
+  width: 363px;
   height: 363px;
   border: 2px solid black;
 }
@@ -13,17 +20,18 @@
 .board-square {
   width: 121px;
   border: 2px black solid;
-  text-align: center;
   display: flex;
 }
 .XO {
-  margin: 0;
+  margin: auto;
   padding: 0;
-  font-size: 120px;
+  font-size: 80px;
+  text-align: center;
 }
 .hidden {
   visibility: hidden;
 }
 .WinnerWinnerChickenDinner {
   height: 70px;
+  margin: 15px;
 }
