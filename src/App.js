@@ -1,23 +1,47 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
+
+  
 
   const [turn, setTurn] = useState('X')
   const [board, setBoard] = useState(Array(9).fill(''))
 
-  // useEffect(() => {
-  //   CheckBoard()
-  // }, [board])
+  //Check if there is a winner after every turn
+  useEffect(() => {
+    const winningCombos = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8], // horizontal
+      [0, 3, 6], [1, 4, 7], [2, 5, 8], // vertical
+      [0, 4, 8], [2, 4, 6] // diagonal
+    ]
+
+    if (turn === "X") {
+      //Check O for winner after their turn
+      winningCombos.forEach((combo) => {
+        if (board[combo[0]] === 'O' && board[combo[1]] === 'O' && board[combo[2]] === 'O') {
+          alert('O wins!')
+        }
+      })
+    }else {
+      //Check X for winner after their turm
+      winningCombos.forEach((combo) => {
+        if (board[combo[0]] === 'X' && board[combo[1]] === 'X' && board[combo[2]] === 'X') {
+          alert('X wins!')
+        }
+      })
+    }
+
+  }, [board, turn])
   
   function setPlay(boardSquare, playersTurn) {
     if (board[boardSquare] === '') {
       board[boardSquare] = playersTurn
       setBoard(board)
       setTurn(playersTurn === 'X' ? 'O' : 'X')
-      console.log(board);
     }
   }
+
 
   return (
     <div className="App">
