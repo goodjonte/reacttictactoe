@@ -1,0 +1,23 @@
+.game {
+  width: 363px;
+  height: 363px;
+  border: 2px solid black;
+}
+.board-row {
+  display: flex;
+  flex-direction: row;
+  height: 121px;
+  margin: 0;
+  padding: 0;
+}
+.board-square {
+  width: 121px;
+  border: 2px black solid;
+  text-align: center;
+  display: flex;
+}
+.XO {
+  margin: 0;
+  padding: 0;
+  font-size: 120px;
+}
