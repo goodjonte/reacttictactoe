@@ -21,3 +21,9 @@
   padding: 0;
   font-size: 120px;
 }
+.hidden {
+  visibility: hidden;
+}
+.WinnerWinnerChickenDinner {
+  height: 70px;
+}
